@@ -4,11 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
 public class GameActivity extends AppCompatActivity {
 
@@ -17,8 +16,8 @@ public class GameActivity extends AppCompatActivity {
 
     TextView playerText;
 
-    ArrayList<String> arrayList = new ArrayList<>();
-    ArrayAdapter tAdapter;
+//    ArrayList<String> arrayList = new ArrayList<>();
+//    ArrayAdapter tAdapter;
 
     TextView textView0;
     TextView textView1;
@@ -29,6 +28,11 @@ public class GameActivity extends AppCompatActivity {
     TextView textView6;
     TextView textView7;
     TextView textView8;
+    boolean isPlayer1Turn = true;
+    int count = 0;
+    String nextPlayer = "player1";
+
+    HashMap<String, String> board = new HashMap<>(9);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,45 +57,56 @@ public class GameActivity extends AppCompatActivity {
         textView7 = (TextView)findViewById(R.id.textView8);
         textView8 = (TextView)findViewById(R.id.textView9);
 
-
         textView0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                boolean player1 = true;
-
-                if(player1){
+                if(isPlayer1Turn){
                     textView0.setText("X");
+                    board.put("0", "X");
+                    nextPlayer = "player2";
                     }else {
                         textView0.setText("O");
+                        nextPlayer = "player1";
                 }
+                isPlayer1Turn = !isPlayer1Turn;
+                count++;
+                playerText.setText(nextPlayer + "'s turn");
+
             }
         });
         textView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                boolean player1 = true;
 
-                if (player1){
+                if (isPlayer1Turn){
                     textView1.setText("X");
+                    nextPlayer = "player2";
                 }else {
                     textView1.setText("O");
+                    nextPlayer = "player1";
                 }
-
+                isPlayer1Turn = !isPlayer1Turn;
+                count++;
+                playerText.setText(nextPlayer + "'s turn");
             }
         });
         textView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                boolean player1 = true;
 
-                if (player1){
+                if (isPlayer1Turn){
                     textView2.setText("X");
+                    nextPlayer = "player2";
                 }else {
                     textView2.setText("O");
+                    nextPlayer = "player1";
                 }
+                isPlayer1Turn = !isPlayer1Turn;
+                count++;
+                playerText.setText(nextPlayer + "'s turn");
             }
         });
         textView3.setOnClickListener(new View.OnClickListener() {
@@ -100,11 +115,16 @@ public class GameActivity extends AppCompatActivity {
 
                 boolean player1 = true;
 
-                if (player1){
+                if (isPlayer1Turn){
                     textView3.setText("X");
+                    nextPlayer = "player2";
                 }else {
                     textView3.setText("O");
+                    nextPlayer = "player1";
                 }
+                isPlayer1Turn = !isPlayer1Turn;
+                count++;
+                playerText.setText(nextPlayer + "'s turn");
             }
         });
         textView4.setOnClickListener(new View.OnClickListener() {
@@ -113,11 +133,16 @@ public class GameActivity extends AppCompatActivity {
 
                 boolean player1 = true;
 
-                if (player1){
+                if (isPlayer1Turn){
                     textView4.setText("X");
+                    nextPlayer = "player2";
                 }else {
                     textView4.setText("O");
+                    nextPlayer = "player1";
                 }
+                isPlayer1Turn = !isPlayer1Turn;
+                count++;
+                playerText.setText(nextPlayer + "'s turn");
             }
         });
         textView5.setOnClickListener(new View.OnClickListener() {
@@ -126,11 +151,16 @@ public class GameActivity extends AppCompatActivity {
 
                 boolean player1 = true;
 
-                if (player1){
+                if (isPlayer1Turn){
                     textView5.setText("X");
+                    nextPlayer = "player2";
                 }else {
                     textView5.setText("O");
+                    nextPlayer = "player1";
                 }
+                isPlayer1Turn = !isPlayer1Turn;
+                count++;
+                playerText.setText(nextPlayer + "'s turn");
             }
         });
         textView6.setOnClickListener(new View.OnClickListener() {
@@ -139,11 +169,16 @@ public class GameActivity extends AppCompatActivity {
 
                 boolean player1 = true;
 
-                if (player1){
+                if (isPlayer1Turn){
                     textView6.setText("X");
+                    nextPlayer = "player2";
                 }else {
                     textView6.setText("O");
+                    nextPlayer = "player1";
                 }
+                isPlayer1Turn = !isPlayer1Turn;
+                count++;
+                playerText.setText(nextPlayer + "'s turn");
             }
         });
         textView7.setOnClickListener(new View.OnClickListener() {
@@ -152,11 +187,16 @@ public class GameActivity extends AppCompatActivity {
 
                 boolean player1 = true;
 
-                if (player1){
+                if (isPlayer1Turn){
                     textView7.setText("X");
+                    nextPlayer = "player2";
                 }else {
                     textView7.setText("O");
+                    nextPlayer = "player1";
                 }
+                isPlayer1Turn = !isPlayer1Turn;
+                count++;
+                playerText.setText(nextPlayer + "'s turn");
             }
         });
         textView8.setOnClickListener(new View.OnClickListener() {
@@ -165,11 +205,16 @@ public class GameActivity extends AppCompatActivity {
 
                 boolean player1 = true;
 
-                if (player1){
+                if (isPlayer1Turn){
                     textView8.setText("X");
+                    nextPlayer = "player2";
                 }else {
                     textView8.setText("O");
+                    nextPlayer = "player1";
                 }
+                isPlayer1Turn = !isPlayer1Turn;
+                count++;
+                playerText.setText(nextPlayer + "'s turn");
             }
         });
 
