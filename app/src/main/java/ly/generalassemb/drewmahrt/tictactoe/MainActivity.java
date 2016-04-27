@@ -11,11 +11,11 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    //
+    //Variables
     EditText player1;
     EditText player2;
     Button startButton;
-    TextView textView;
+//    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,11 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
         //referencing winner from second activity
         SharedPreferences sharedPrefs = getSharedPreferences("ly.generalassemb.drewmahrt.tictactoe",MODE_PRIVATE);
-
         String lastWinner = sharedPrefs.getString("winner","");
-
         TextView textView = (TextView)findViewById(R.id.last_winner_text);
-
         textView.setText("The last winner was " + lastWinner);
 
         player1 = (EditText)findViewById(R.id.player_one_name);
@@ -40,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Start second activity
 
+                //Start second activity while carrying over player names
                 Intent intent = new Intent(MainActivity.this, GameActivity.class);
                 intent.putExtra("playerOne", player1.getText().toString());
                 intent.putExtra("playerTwo", player2.getText().toString());
