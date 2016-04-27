@@ -1,6 +1,7 @@
 package ly.generalassemb.drewmahrt.tictactoe;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -24,6 +25,7 @@ public class GameActivity extends AppCompatActivity {
     int count = 0;
     String nextPlayer = "player1";
     String currentPlayer = "player1";
+    String lastWinner;
 
 
     @Override
@@ -217,6 +219,7 @@ public class GameActivity extends AppCompatActivity {
 
     public void checkWin(){
 
+
         if(textView0.getText() == "X" && textView1.getText() == "X" && textView2.getText() == "X" ||
                 textView0.getText() == "O" && textView1.getText() == "O" && textView2.getText() == "O") {
             Toast.makeText(GameActivity.this, currentPlayer + " wins!", Toast.LENGTH_SHORT).show();
@@ -244,9 +247,19 @@ public class GameActivity extends AppCompatActivity {
         } else if (count > 7){
             Toast.makeText(GameActivity.this, "Draw!", Toast.LENGTH_SHORT).show();}
 
+         lastWinner = currentPlayer;
+
+
         isPlayer1Turn = !isPlayer1Turn;
         count++;
 
+        SharedPreferences sharedPrefs = getSharedPreferences("ly.generalassemb.drewmahrt.tictactoe",MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = sharedPrefs.edit();
+
+        editor.putString("winner", lastWinner);
+
+        editor.commit();
 
     }
 
