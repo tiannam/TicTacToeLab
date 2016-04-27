@@ -60,13 +60,12 @@ public class GameActivity extends AppCompatActivity {
 
                 if (isPlayer1Turn) {
                     textView0.setText("X");
-                    nextPlayer = "player2";
+                    nextPlayer = player2;
                 } else {
                     textView0.setText("O");
-                    nextPlayer = "player1";
+                    nextPlayer = player1;
                 }
-                isPlayer1Turn = !isPlayer1Turn;
-                count++;
+                checkWin();
                 playerText.setText(nextPlayer + "'s turn");
 
             }
@@ -78,13 +77,12 @@ public class GameActivity extends AppCompatActivity {
 
                 if (isPlayer1Turn) {
                     textView1.setText("X");
-                    nextPlayer = "player2";
+                    nextPlayer = player2;
                 } else {
                     textView1.setText("O");
-                    nextPlayer = "player1";
+                    nextPlayer = player1;
                 }
-                isPlayer1Turn = !isPlayer1Turn;
-                count++;
+                checkWin();
                 playerText.setText(nextPlayer + "'s turn");
             }
         });
@@ -95,10 +93,10 @@ public class GameActivity extends AppCompatActivity {
 
                 if (isPlayer1Turn) {
                     textView2.setText("X");
-                    nextPlayer = "player2";
+                    nextPlayer = player2;
                 } else {
                     textView2.setText("O");
-                    nextPlayer = "player1";
+                    nextPlayer = player1;
                 }
                 checkWin();
                 playerText.setText(nextPlayer + "'s turn");
@@ -108,17 +106,15 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                boolean player1 = true;
 
                 if (isPlayer1Turn) {
                     textView3.setText("X");
-                    nextPlayer = "player2";
+                    nextPlayer = player2;
                 } else {
                     textView3.setText("O");
-                    nextPlayer = "player1";
+                    nextPlayer = player1;
                 }
-                isPlayer1Turn = !isPlayer1Turn;
-                count++;
+                checkWin();
                 playerText.setText(nextPlayer + "'s turn");
             }
         });
@@ -126,17 +122,14 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                boolean player1 = true;
-
                 if (isPlayer1Turn) {
                     textView4.setText("X");
-                    nextPlayer = "player2";
+                    nextPlayer = player2;
                 } else {
                     textView4.setText("O");
-                    nextPlayer = "player1";
+                    nextPlayer = player1;
                 }
-                isPlayer1Turn = !isPlayer1Turn;
-                count++;
+                checkWin();
                 playerText.setText(nextPlayer + "'s turn");
             }
         });
@@ -144,17 +137,15 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                boolean player1 = true;
 
                 if (isPlayer1Turn) {
                     textView5.setText("X");
-                    nextPlayer = "player2";
+                    nextPlayer = player2;
                 } else {
                     textView5.setText("O");
-                    nextPlayer = "player1";
+                    nextPlayer = player1;
                 }
-                isPlayer1Turn = !isPlayer1Turn;
-                count++;
+                checkWin();
                 playerText.setText(nextPlayer + "'s turn");
             }
         });
@@ -162,17 +153,15 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                boolean player1 = true;
 
                 if (isPlayer1Turn) {
                     textView6.setText("X");
-                    nextPlayer = "player2";
+                    nextPlayer = player2;
                 } else {
                     textView6.setText("O");
-                    nextPlayer = "player1";
+                    nextPlayer = player1;
                 }
-                isPlayer1Turn = !isPlayer1Turn;
-                count++;
+                checkWin();
                 playerText.setText(nextPlayer + "'s turn");
             }
         });
@@ -180,17 +169,15 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                boolean player1 = true;
 
                 if (isPlayer1Turn) {
                     textView7.setText("X");
-                    nextPlayer = "player2";
+                    nextPlayer = player2;
                 } else {
                     textView7.setText("O");
-                    nextPlayer = "player1";
+                    nextPlayer = player1;
                 }
-                isPlayer1Turn = !isPlayer1Turn;
-                count++;
+                checkWin();
                 playerText.setText(nextPlayer + "'s turn");
             }
         });
@@ -198,14 +185,13 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                boolean player1 = true;
 
                 if (isPlayer1Turn) {
                     textView8.setText("X");
-                    nextPlayer = "player2";
+                    nextPlayer = player2;
                 } else {
                     textView8.setText("O");
-                    nextPlayer = "player1";
+                    nextPlayer = player1;
                 }
                 checkWin();
                 playerText.setText(nextPlayer + "'s turn");
@@ -218,24 +204,32 @@ public class GameActivity extends AppCompatActivity {
 
     public void checkWin(){
 
-        if(textView0.getText() == textView1.getText() &&  textView1.getText() == textView2.getText()){
-            Toast.makeText(GameActivity.this, "player X wins", Toast.LENGTH_SHORT).show();
-        } else if (textView3.getText() == textView4.getText() && textView4.getText() == textView5.getText()){
-            Toast.makeText(GameActivity.this, "player X wins", Toast.LENGTH_SHORT).show();
-        } else if (textView6.getText() == textView7.getText() && textView7.getText() == textView8.getText()){
-            Toast.makeText(GameActivity.this, "player X wins", Toast.LENGTH_SHORT).show();
-        } else if (textView0.getText() == textView4.getText() && textView4.getText() == textView8.getText()){
-            Toast.makeText(GameActivity.this, "player X wins", Toast.LENGTH_SHORT).show();
-        } else if (textView2.getText() == textView4.getText() && textView4.getText() == textView6.getText()){
-            Toast.makeText(GameActivity.this, "player wins", Toast.LENGTH_SHORT).show();
-        } else if (textView0.getText() == textView3.getText() && textView3.getText() == textView6.getText()){
-            Toast.makeText(GameActivity.this, "player wins", Toast.LENGTH_SHORT).show();
-        } else if (textView1.getText() == textView4.getText() && textView4.getText() == textView7.getText()){
-            Toast.makeText(GameActivity.this, "player wins", Toast.LENGTH_SHORT).show();
-        } else if (textView2.getText() == textView5.getText() && textView5.getText() == textView8.getText()){
-            Toast.makeText(GameActivity.this, "player wins", Toast.LENGTH_SHORT).show();
-        } else {Toast.makeText(GameActivity.this, "Draw!", Toast.LENGTH_SHORT).show();}
-
+        if(textView0.getText() == "X" && textView1.getText() == "X" && textView2.getText() == "X" ||
+                textView0.getText() == "O" && textView1.getText() == "O" && textView2.getText() == "O") {
+            Toast.makeText(GameActivity.this, nextPlayer + " wins!", Toast.LENGTH_SHORT).show();
+        } else if (textView3.getText() == "X" && textView4.getText() == "X" && textView5.getText() == "X" ||
+                textView3.getText() == "O" && textView4.getText() == "O" && textView5.getText() == "O"){
+            Toast.makeText(GameActivity.this, nextPlayer + " wins!", Toast.LENGTH_SHORT).show();
+        } else if (textView6.getText() == "X" && textView7.getText() == "X" && textView8.getText() == "X" ||
+                textView6.getText() == "O" && textView7.getText() == "O" && textView8.getText() == "O"){
+            Toast.makeText(GameActivity.this, nextPlayer + " wins", Toast.LENGTH_SHORT).show();
+        } else if (textView0.getText() == "X" && textView4.getText() == "X" && textView8.getText() == "X" ||
+                textView0.getText() == "O" && textView4.getText() == "O" && textView8.getText() == "O"){
+            Toast.makeText(GameActivity.this, nextPlayer + " wins", Toast.LENGTH_SHORT).show();
+        } else if (textView2.getText() == "X" && textView4.getText() == "X" && textView6.getText() == "X" ||
+                textView2.getText() == "O" && textView4.getText() == "O" && textView6.getText() == "O"){
+            Toast.makeText(GameActivity.this, nextPlayer + " wins", Toast.LENGTH_SHORT).show();
+        } else if (textView0.getText() == "X" && textView3.getText() == "X" && textView6.getText() == "X" ||
+                textView0.getText() == "O" && textView3.getText() == "O" && textView6.getText() == "O"){
+            Toast.makeText(GameActivity.this, nextPlayer + " wins", Toast.LENGTH_SHORT).show();
+        } else if (textView1.getText() == "X" && textView4.getText() == "X" && textView7.getText() == "X" ||
+                textView1.getText() == "O" && textView4.getText() == "O" && textView7.getText() == "O"){
+            Toast.makeText(GameActivity.this, nextPlayer + " wins", Toast.LENGTH_SHORT).show();
+        } else if (textView2.getText() == "X" && textView5.getText() == "X" && textView8.getText() == "X" ||
+                textView2.getText() == "O" && textView5.getText() == "O" && textView8.getText() == "O") {
+            Toast.makeText(GameActivity.this, nextPlayer + " wins", Toast.LENGTH_SHORT).show();
+//        } else {Toast.makeText(GameActivity.this, "Draw!", Toast.LENGTH_SHORT).show();}
+        }
         isPlayer1Turn = !isPlayer1Turn;
         count++;
     }
